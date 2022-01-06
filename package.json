@@ -1,6 +1,7 @@
 {
   "name": "todo-application",
   "version": "1.0.0",
+  "proxy": "https://aftab-financepeer-assignment.herokuapp.com",
   "description": "",
   "main": "app.js",
   "author": "",
