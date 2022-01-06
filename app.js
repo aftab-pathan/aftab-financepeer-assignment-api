@@ -100,7 +100,7 @@ app.post("/login/", async (request, response) => {
 //API 3 GET post data
 app.get("/", AuthenticationJWT, async (request, response) => {
   const getPostQuery = `
-  SELECT * FROM postdata`;
+  SELECT * FROM postData`;
   const userPost = await db.all(getPostQuery);
   response.status(200);
   response.send(
@@ -113,7 +113,7 @@ app.get("/", AuthenticationJWT, async (request, response) => {
 });
 
 //API 4 InsertData in dB
-app.post("/posts/add/", AuthenticationJWT,async (request, response) => {
+app.post("/posts/add/", AuthenticationJWT, async (request, response) => {
   const { postData } = request.body;
 
   const values = postDetails.map(
@@ -124,7 +124,7 @@ app.post("/posts/add/", AuthenticationJWT,async (request, response) => {
 
   const addPostQuery = `
     INSERT INTO
-      postdata (user_id,title,body)
+      postData (user_id,title,body)
     VALUES
        ${valuesString};`;
 
