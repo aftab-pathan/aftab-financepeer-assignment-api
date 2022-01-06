@@ -18,8 +18,8 @@ const initializeDbAndServer = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    app.listen(process.env.PORT || 3001, () => {
-      console.log("Server Working At http://localhost:3001");
+    app.listen(process.env.PORT || 3000, () => {
+      console.log("Server Working At http://localhost:3000");
     });
   } catch (e) {
     console.log(`DB Error : ${e.message}`);
@@ -113,7 +113,7 @@ app.get("/", AuthenticationJWT, async (request, response) => {
 });
 
 //API 4 InsertData in dB
-app.post("/posts/add/",  async (request, response) => {
+app.post("/posts/add/", AuthenticationJWT,async (request, response) => {
   const { postData } = request.body;
 
   const values = postDetails.map(
