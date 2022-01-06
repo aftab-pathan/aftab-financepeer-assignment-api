@@ -116,7 +116,7 @@ app.get("/", AuthenticationJWT, async (request, response) => {
 app.post("/posts/add/", AuthenticationJWT, async (request, response) => {
   const { postData } = request.body;
 
-  const values = postDetails.map(
+  const values = postData.map(
     (eachPost) => `('${eachPost.userId}', ${eachPost.title}, ${eachPost.body})`
   );
 
