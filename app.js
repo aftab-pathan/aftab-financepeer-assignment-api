@@ -113,7 +113,7 @@ app.get("/", AuthenticationJWT, async (request, response) => {
 });
 
 //API 4 InsertData in dB
-app.post("/posts/add/", AuthenticationJWT, async (request, response) => {
+app.post("/posts/add/",  async (request, response) => {
   const { postData } = request.body;
 
   const values = postDetails.map(
